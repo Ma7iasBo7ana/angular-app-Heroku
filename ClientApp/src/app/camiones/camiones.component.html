@@ -1,0 +1,38 @@
+<p class="alert alert-primary">Listado de Camiones</p>
+
+<div class="row">
+    <div class="col-md-6">
+        
+        <input class="form-control mb-2" [(ngModel)]="campobuscado" name="campobuscado" placeholder="Ingrese una Marca"/>        
+    </div>
+    <div class="col-md-6">
+        <button (click)="Buscar()" class="btn btn-primary">Buscar</button>
+        <button (click)="TraccionS()" class="btn btn-success">Traccion simple</button>
+        <button (click)="TraccionD()" class="btn btn-secondary">Traccion Doble</button>
+        <button [routerLink]='["/camiones-crear"]' class="btn btn-info">Ingresar Camion</button>
+        
+    </div>
+</div>
+
+<table class="table table-dark">
+    <tr>
+        <th>ID</th>
+        <th>Modelo</th>
+        <th>Marca</th>
+        <th>Traccion</th>
+        <th>Transmision</th>
+        
+        <td></td>
+    </tr>
+    <tr *ngFor="let camion of listarCamiones">
+        <td>{{camion.id}}</td>
+        <td>{{camion.modelo}}</td>
+        <td>{{camion.marca}}</td>
+        <td>{{camion.traccion}}</td>
+        <td>{{camion.transmision}}</td>
+        <td>
+            <button class="btn btn-danger" (click)="borrar(camion.id)">Borrar</button>
+            <button class="btn btn-warning" [routerLink]='["/camiones-editar/"+ camion.id]'>Editar</button>
+        </td>
+    </tr>
+</table>

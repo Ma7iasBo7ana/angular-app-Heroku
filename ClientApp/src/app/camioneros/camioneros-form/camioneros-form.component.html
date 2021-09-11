@@ -1,0 +1,123 @@
+<h1>Agregar Camionero</h1>
+
+<form class="form-horizontal" 
+[formGroup]="formCamioneros"
+(ngSubmit)="save()"
+>
+<fieldset>
+<div class="form-group" [ngClass]="{'has-error':
+(formCamioneros.get('nombre').touched||
+formCamioneros.get('nombre').dirty &&
+!formCamioneros.get('nombre').valid)
+}">
+    <label for="nombre">Nombre</label>
+    <input id="nombre" 
+    type="text"
+    required
+    formControlName="nombre"
+    class="form-control"
+    placeholder="Ingrese un nombre"
+    >
+    <span class="help-block" *ngIf=" (formCamioneros.get('nombre').touched||
+    formCamioneros.get('nombre').dirty &&
+    !formCamioneros.get('nombre').valid)">
+    <span style="color: red;" *ngIf="formCamioneros.get('nombre').errors?.required">
+    El campo es requerido</span>
+        
+    </span>
+</div>
+<div class="form-group" [ngClass]="{'has-error':
+(formCamioneros.get('apellido').touched||
+formCamioneros.get('apellido').dirty &&
+!formCamioneros.get('apellido').valid)
+}">
+    <label for="apellido">Apellido</label>
+    <input id="apellido" 
+    type="text"
+    required
+    formControlName="apellido"
+    class="form-control"
+    placeholder="Ingrese un apellido"
+    >
+    <span class="help-block" *ngIf=" (formCamioneros.get('apellido').touched||
+    formCamioneros.get('apellido').dirty &&
+    !formCamioneros.get('apellido').valid)">
+    <span style="color: red;" *ngIf="formCamioneros.get('apellido').errors?.required">
+    El campo es requerido</span>
+</span>
+</div>
+<div class="form-group" [ngClass]="{'has-error':
+(formCamioneros.get('domicilio').touched||
+formCamioneros.get('domicilio').dirty &&
+!formCamioneros.get('domicilio').valid)
+}">
+    <label for="domicilio">Domicilio</label>
+    <input id="domicilio" 
+    type="text"
+    required
+    formControlName="domicilio"
+    class="form-control"
+    placeholder="Ingrese una dirección"
+    >
+    <span class="help-block" *ngIf=" (formCamioneros.get('domicilio').touched||
+    formCamioneros.get('domicilio').dirty &&
+    !formCamioneros.get('domicilio').valid)">
+    <span style="color: red;" *ngIf="formCamioneros.get('domicilio').errors?.required">
+    El campo es requerido</span>
+</span>
+</div>
+<div class="form-group" [ngClass]="{'has-error':
+(formCamioneros.get('telefono').touched||
+formCamioneros.get('telefono').dirty &&
+!formCamioneros.get('telefono').valid)
+}">
+    <label for="telefono">Telefono</label>
+    <input id="telefono" 
+    type="text"
+    required
+    formControlName="telefono"
+    class="form-control"
+    placeholder="Ingrese numero telefonico"
+    >
+    <span class="help-block" *ngIf=" (formCamioneros.get('telefono').touched||
+    formCamioneros.get('telefono').dirty &&
+    !formCamioneros.get('telefono').valid)">
+    <span style="color: red;" *ngIf="formCamioneros.get('telefono').errors?.required">
+    El campo es requerido</span>
+</span>
+</div>
+<!--<div class="form-group">
+    <label for="provincia">Provincia</label>
+    <input id="provincia" 
+    type="text"
+    required
+    formControlName="provincia"
+    class="form-control"
+    placeholder="Ingrese ID de provincia"
+    >
+</div>-->
+<div class="form-group" [ngClass]="{'has-error':
+(formCamioneros.get('salario').touched||
+formCamioneros.get('salario').dirty &&
+!formCamioneros.get('salario').valid)
+}">
+    <label for="salario">Salario</label>
+    <input id="salario" 
+    type="text"
+    required
+    formControlName="salario"
+    class="form-control"
+    
+    >
+    <span class="help-block" *ngIf=" (formCamioneros.get('salario').touched||
+    formCamioneros.get('salario').dirty &&
+    !formCamioneros.get('salario').valid)">
+    <span style="color: red;" *ngIf="formCamioneros.get('salario').errors?.required">
+    El campo es requerido</span>
+</span>
+</div>
+</fieldset>
+
+<button  class="btn btn-primary" type="submit">Guardar</button>
+</form>
+

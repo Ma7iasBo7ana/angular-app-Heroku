@@ -1,0 +1,38 @@
+<p class="alert alert-primary">Listado de Camioneros</p>
+
+<div class="row">
+    <div class="col-md-6">
+        <input class="form-control mb-2" [(ngModel)]="campobuscado" name="campobuscado"placeholder="Ingrese un nombre o apellido"/>        
+    </div>
+    <div class="col-md-6">
+        <button (click)="Buscar()" class="btn btn-primary">Buscar</button>
+        <button (click)="Entregado()" class="btn btn-success">Mayor Salario</button>
+        <button (click)="Promedio()" class="btn btn-secondary">SalarioPromedio</button>
+        <button [routerLink]='["/camioneros-crear"]' class="btn btn-info">Ingresar Camionero</button>
+        
+    </div>
+</div>
+
+<table class="table table-dark">
+    <tr>
+        <th>ID</th>
+        <th>Nombre</th>
+        <th>Apellido</th>
+        <th>Domicilio</th>
+        <th>Teléfono</th>
+        <th>Salario</th>
+        <td></td>
+    </tr>
+    <tr *ngFor="let camionero of listarCamioneros">
+        <td>{{camionero.id}}</td>
+        <td>{{camionero.nombre}}</td>
+        <td>{{camionero.apellido}}</td>
+        <td>{{camionero.domicilio}}</td>
+        <td>{{camionero.telefono}}</td>
+        <td>{{camionero.salario}}</td>
+        <td>
+            <button class="btn btn-danger" (click)="borrar(camionero.id)">Borrar</button>
+            <button class="btn btn-warning" [routerLink]='["/camioneros-editar/"+ camionero.id]'>Editar</button>
+        </td>
+    </tr>
+</table>

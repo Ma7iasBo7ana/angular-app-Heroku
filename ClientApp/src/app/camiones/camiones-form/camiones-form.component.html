@@ -1,0 +1,72 @@
+<h1>Agregar Camion</h1>
+
+<form class="form-horizontal" 
+[formGroup]="formCamiones"
+(ngSubmit)="save()"
+>
+<fieldset>
+<div class="form-group">
+    <label for="modelo">Modelo</label>
+    <input id="modelo" 
+    type="text"
+    required
+    formControlName="modelo"
+    class="form-control"
+    placeholder="Ingrese un Modelo"
+    >
+</div>
+<div class="form-group">
+    <label for="marca">Marca</label>
+    <input id="marca" 
+    type="text"
+    required
+    formControlName="marca"
+    class="form-control"
+    placeholder="Ingrese una Marca"
+    >
+</div>
+<div class="form-group">
+    <label for="traccion">Traccion</label>
+    <input id="traccion" 
+    type="text"
+    required
+    formControlName="traccion"
+    class="form-control"
+    placeholder="Ingrese una traccion"
+    >
+</div>
+<div class="form-group">
+    <label for="transmision">Transmision</label>
+    <input id="transmision" 
+    type="text"
+    required
+    formControlName="transmision"
+    class="form-control"
+    placeholder="Ingrese transmision"
+    >
+</div>
+<!-- <div class="form-group">
+    <label for="provincia">Provincia</label>
+    <input id="provincia" 
+    type="text"
+    required
+    formControlName="provincia"
+    class="form-control"
+    placeholder="Ingrese provincia"
+    >
+</div>
+<div class="form-group">
+    <label for="entregado">Entregado</label>
+    <input id="entregado" 
+    type="text"
+    required
+    formControlName="entregado"
+    class="form-control"
+    
+    >
+</div> -->
+</fieldset>
+
+<button  class="btn btn-primary" type="submit">Guardar</button>
+</form>
+
